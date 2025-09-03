@@ -3,690 +3,1068 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficha de Metadados - Template</title>
+    <title>Ficha de Metadados (ISO)</title>
     
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Lexend Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-        /* Font Face Declarations for Lexend */
-        @font-face {
-            font-family: 'Lexend';
-            src: url('IdentidadeGraficaSGGOV2025/Tipo de letra/Lexend-Thin.ttf') format('truetype');
-            font-weight: 100;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Lexend';
-            src: url('IdentidadeGraficaSGGOV2025/Tipo de letra/Lexend-ExtraLight.ttf') format('truetype');
-            font-weight: 200;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Lexend';
-            src: url('IdentidadeGraficaSGGOV2025/Tipo de letra/Lexend-Light.ttf') format('truetype');
-            font-weight: 300;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Lexend';
-            src: url('IdentidadeGraficaSGGOV2025/Tipo de letra/Lexend-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Lexend';
-            src: url('IdentidadeGraficaSGGOV2025/Tipo de letra/Lexend-Medium.ttf') format('truetype');
-            font-weight: 500;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Lexend';
-            src: url('IdentidadeGraficaSGGOV2025/Tipo de letra/Lexend-SemiBold.ttf') format('truetype');
-            font-weight: 600;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Lexend';
-            src: url('IdentidadeGraficaSGGOV2025/Tipo de letra/Lexend-Bold.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Lexend';
-            src: url('IdentidadeGraficaSGGOV2025/Tipo de letra/Lexend-ExtraBold.ttf') format('truetype');
-            font-weight: 800;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Lexend';
-            src: url('IdentidadeGraficaSGGOV2025/Tipo de letra/Lexend-Black.ttf') format('truetype');
-            font-weight: 900;
-            font-style: normal;
-        }
-
         :root {
-            --primary-color: #5B9C86; /* Verde-azulado principal */
-            --primary-dark: #4A7C6B; /* Versão mais escura */
-            --primary-light: #7BB8A3; /* Versão mais clara */
-            --primary-lighter: #9DCCB8; /* Versão muito clara */
-            --primary-lightest: #E8F5F0; /* Versão mais clara para fundos */
-            --secondary-color: #4A7C6B; /* Verde-azulado escuro */
-            --accent-color: #E8F5F0; /* Verde-azulado muito claro */
-            --success-color: #5B9C86; /* Verde-azulado */
-            --info-color: #E8F5F0; /* Verde-azulado claro */
-            --warning-color: #D4A574; /* Dourado suave */
-            --danger-color: #B87C7C; /* Rosa-vermelho suave */
-            --light-color: #f8f9fa;
-            --dark-color: #2C4A3E; /* Verde-azulado muito escuro */
-            --border-radius: 0.75rem;
-            --box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-            --box-shadow-lg: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            /* Cores secundárias */
+            --secondary-blue: #2B5683;
+            --secondary-yellow: #FFD200;
+            --secondary-brown: #BE9C54;
+            --secondary-gray: #8A8A8A;
         }
 
         body {
             font-family: 'Lexend', sans-serif;
-            background: linear-gradient(135deg, var(--primary-lightest) 0%, #ffffff 50%, var(--primary-lightest) 100%);
+            background: #fafafa;
             min-height: 100vh;
-            color: var(--dark-color);
+            padding: 20px 0;
         }
 
-        .main-container {
-            padding: 2rem 0;
+        .container {
+            max-width: 1200px;
         }
 
-        .header-section {
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--box-shadow-lg);
-            border: 2px solid var(--primary-color);
         }
 
-        .header-title {
-            color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            font-family: 'Lexend', sans-serif;
-        }
-
-        .header-subtitle {
-            color: var(--secondary-color);
-            font-weight: 400;
-            font-family: 'Lexend', sans-serif;
-        }
-
-        .metadata-section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--box-shadow);
-            border: 1px solid var(--accent-color);
-            transition: all 0.3s ease;
-        }
-
-        .metadata-section:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--box-shadow-lg);
-            border-color: var(--primary-light);
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        .section-icon {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        .card-header {
+            background: var(--secondary-blue);
             color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            font-size: 1.2rem;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 20px;
+            font-weight: 600;
         }
 
-        .section-title {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin: 0;
-            font-size: 1.25rem;
-            font-family: 'Lexend', sans-serif;
+        .card-body {
+            padding: 25px;
         }
 
         .form-label {
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            font-family: 'Lexend', sans-serif;
-        }
-
-        .form-label i {
-            margin-right: 0.5rem;
-            color: var(--primary-color);
+            font-weight: 500;
+            color: var(--secondary-blue);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
         }
 
         .form-control, .form-select {
-            border-radius: 0.5rem;
-            border: 2px solid var(--accent-color);
-            padding: 0.75rem 1rem;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 12px 15px;
             font-family: 'Lexend', sans-serif;
+            transition: all 0.3s ease;
         }
 
         .form-control:focus, .form-select:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.2rem rgba(91, 156, 134, 0.15);
+            border-color: var(--secondary-blue);
+            box-shadow: none;
         }
 
-        .form-control::placeholder {
-            color: #6B7C93;
-            opacity: 0.7;
+        .btn {
+            border-radius: 10px;
+            padding: 12px 25px;
+            font-weight: 500;
             font-family: 'Lexend', sans-serif;
-        }
-
-        .btn-export {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border: none;
-            border-radius: var(--border-radius);
-            padding: 1rem 2rem;
-            font-weight: 600;
-            font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: var(--box-shadow);
-            font-family: 'Lexend', sans-serif;
-        }
-
-        .btn-export:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--box-shadow-lg);
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-        }
-
-        .floating-action-btn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border: none;
+        }
+
+        .btn-primary {
+            background: var(--secondary-blue);
             color: white;
-            font-size: 1.5rem;
-            box-shadow: var(--box-shadow-lg);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-blue);
+            opacity: 0.8;
+        }
+
+        .btn-success {
+            background: var(--secondary-yellow);
+            color: black;
+            border: none;
+        }
+
+        .btn-success:hover {
+            background: var(--secondary-yellow);
+            opacity: 0.8;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+            border: none;
+        }
+
+        .btn-danger:hover {
+            background: #dc3545;
+            opacity: 0.8;
+        }
+
+        .btn-warning {
+            background: var(--secondary-brown);
+            color: white;
+            border: none;
+        }
+
+        .btn-warning:hover {
+            background: var(--secondary-brown);
+            opacity: 0.8;
+        }
+
+        .column-section {
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #f8f9fa;
             transition: all 0.3s ease;
-            z-index: 1000;
         }
 
-        .floating-action-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+        .column-section:hover {
+            border-color: var(--secondary-blue);
+            box-shadow: none;
         }
 
-        .progress-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.2);
-            z-index: 1001;
+        .page-title {
+            color: var(--secondary-blue);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
         }
 
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            width: 0%;
-            transition: width 0.3s ease;
+        .footer {
+            background: var(--secondary-gray);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .revision-date-input {
+            margin-bottom: 10px;
+        }
+
+        .btn-group-export {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .drop-zone {
+            border: 2px dashed var(--secondary-blue);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            background: #fafafa;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .drop-zone:hover {
+            border-color: var(--secondary-blue);
+            background: #f8f9fa;
+        }
+
+        .drop-zone.dragover {
+            border-color: var(--secondary-blue);
+            background: #f0f0f0;
+        }
+
+        .drop-zone-content {
+            color: var(--secondary-blue);
+        }
+
+        .drop-zone-content h4 {
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         @media (max-width: 768px) {
-            .main-container {
-                padding: 1rem 0;
+            .page-title {
+                font-size: 2rem;
             }
             
-            .header-section {
-                padding: 1.5rem;
-                margin-bottom: 1.5rem;
+            .card-body {
+                padding: 20px;
             }
             
-            .metadata-section {
-                padding: 1rem;
-                margin-bottom: 1rem;
-            }
-            
-            .section-header {
+            .btn-group-export {
                 flex-direction: column;
-                text-align: center;
+                align-items: center;
             }
             
-            .section-icon {
-                margin-right: 0;
-                margin-bottom: 0.5rem;
+            .btn {
+                width: 100%;
+                max-width: 300px;
             }
             
-            .floating-action-btn {
-                bottom: 1rem;
-                right: 1rem;
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-        }
-
-        @media print {
-            body {
-                background: white;
-            }
-            
-            .header-section, .metadata-section {
-                background: white;
-                box-shadow: none;
-                border: 1px solid #dee2e6;
-            }
-            
-            .floating-action-btn, .progress-indicator {
-                display: none;
+            .drop-zone {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-
-<!-- Progress Indicator -->
-<div class="progress-indicator">
-    <div class="progress-bar" id="progressBar"></div>
-</div>
-
-<div class="container-fluid main-container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg-10 col-xl-8">
-            
-            <!-- Header Section -->
-            <div class="header-section text-center">
-                <h1 class="header-title">
-                    <i class="bi bi-file-earmark-text me-2"></i>
-                    Ficha de Metadados
-                </h1>
-                <p class="header-subtitle fs-5">
-                    Template para Estruturas Governamentais
-                </p>
+    <div class="container">
+        <h1 class="page-title">SISTEMA DE GESTÃO DE METADADOS ISO 19115</h1>
+        
+        <!-- Área de Drag & Drop -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 class="mb-0"><i class="fas fa-upload me-2"></i>Carregar Ficheiro JSON Existente</h3>
             </div>
-
-            <!-- Business Metadata -->
-            <div class="metadata-section">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <i class="bi bi-building"></i>
+            <div class="card-body">
+                <div id="dropZone" class="drop-zone">
+                    <div class="drop-zone-content">
+                        <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+                        <h4>Arraste um ficheiro JSON aqui</h4>
+                        <p class="text-muted">ou clique para selecionar um ficheiro</p>
+                        <input type="file" id="fileInput" accept=".json" style="display: none;">
+                        <button type="button" class="btn btn-outline-primary" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-folder-open me-2"></i>Selecionar Ficheiro
+                        </button>
                     </div>
-                    <h3 class="section-title">Business Metadata (Contextual)</h3>
                 </div>
-                
-                <div class="row">
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-briefcase"></i>
-                            Nome da Entidade
-                        </label>
-                        <input type="text" class="form-control" placeholder="Ex.: Ministério da Administração Interna">
-                    </div>
-                    
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-target"></i>
-                            Missão / Função
-                        </label>
-                        <textarea class="form-control" rows="3" placeholder="Descreve a missão institucional e função principal."></textarea>
-                    </div>
-                    
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-gear"></i>
-                            Regras de Negócio
-                        </label>
-                        <textarea class="form-control" rows="2" placeholder="Ex.: Considera-se ativa se publicada no DR e listada no Portal do Governo."></textarea>
-                    </div>
-                    
-                    <div class="col-12">
-                        <label class="form-label">
-                            <i class="bi bi-file-earmark-text"></i>
-                            Fonte Legal / Decreto
-                        </label>
-                        <input type="text" class="form-control" placeholder="Ex.: Decreto-Lei n.º 45/2019">
+                <div id="fileInfo" class="mt-3" style="display: none;">
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Ficheiro carregado:</strong> <span id="fileName"></span>
+                        <button type="button" class="btn btn-sm btn-outline-success ms-2" onclick="loadFormData()">
+                            <i class="fas fa-magic me-1"></i>Preencher Formulário
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Technical Metadata -->
-            <div class="metadata-section">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <i class="bi bi-code-slash"></i>
-                    </div>
-                    <h3 class="section-title">Technical Metadata (Estrutura Técnica)</h3>
-                </div>
-                
-                <div class="row">
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-table"></i>
-                            Nome da Tabela
-                        </label>
-                        <input type="text" class="form-control" placeholder="Ex.: entidades">
-                    </div>
-                    
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-list-ul"></i>
-                            Campos Principais
-                        </label>
-                        <textarea class="form-control" rows="2" placeholder="Ex.: id_entidade (INT), nome (VARCHAR 255), tipo (VARCHAR 100)"></textarea>
-                    </div>
-                    
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-diagram-3"></i>
-                            Relacionamentos
-                        </label>
-                        <textarea class="form-control" rows="2" placeholder="Ex.: 1 Ministério → N Entidades; 1 Entidade → N Subentidades"></textarea>
-                    </div>
-                    
-                    <div class="col-12">
-                        <label class="form-label">
-                            <i class="bi bi-arrow-repeat"></i>
-                            Origem Técnica (Base/Workflow)
-                        </label>
-                        <input type="text" class="form-control" placeholder="Ex.: Base SQL → Lakehouse Microsoft Fabric → Dashboard Power BI">
-                    </div>
-                </div>
+        <!-- Secção de Identificação (ISO 19115) -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-info-circle me-2"></i>Identificação do Recurso (MD_Identification)</h2>
             </div>
-
-            <!-- Operational Metadata -->
-            <div class="metadata-section">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <i class="bi bi-clock"></i>
-                    </div>
-                    <h3 class="section-title">Operational Metadata (Operações)</h3>
-                </div>
-                
+            <div class="card-body">
                 <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-calendar-check"></i>
-                            Última Atualização
-                        </label>
-                        <input type="date" class="form-control">
+                    <div class="col-md-12 mb-3">
+                        <label for="title" class="form-label">Título (citation.title)</label>
+                        <input type="text" class="form-control" id="title" placeholder="Título principal do recurso de dados">
                     </div>
                     
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-calendar-event"></i>
-                            Frequência de Atualização
-                        </label>
-                        <select class="form-select">
-                            <option value="">Selecionar frequência</option>
-                            <option value="diaria">Diária</option>
-                            <option value="semanal">Semanal</option>
-                            <option value="mensal">Mensal</option>
-                            <option value="legislatura">Por Legislatura</option>
+                        <label for="fileIdentifier" class="form-label">Identificador Único (fileIdentifier)</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="fileIdentifier" placeholder="Ex.: SGGOV-XXXXX-XXXXXXXX" onchange="validateUUID(this.value)">
+                            <button class="btn btn-outline-primary" type="button" onclick="generateUUID()">
+                                <i class="fas fa-magic me-1"></i>Gerar ID
+                            </button>
+                        </div>
+                        <small class="form-text text-muted">
+                            <i class="fas fa-info-circle me-1"></i>
+                            Identificador único que começa com "SGGOV" para rastreabilidade. 
+                            <a href="#" onclick="showUUIDInfo()" class="text-decoration-none">Saber mais</a>
+                        </small>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="language" class="form-label">Idioma (language)</label>
+                        <select class="form-select" id="language">
+                            <option value="">Selecione...</option>
+                            <option value="por">Português</option>
+                            <option value="eng">Inglês</option>
+                            <option value="spa">Espanhol</option>
+                            <option value="fra">Francês</option>
+                            <option value="deu">Alemão</option>
+                            <option value="ita">Italiano</option>
                         </select>
                     </div>
                     
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-arrow-left-right"></i>
-                            Pipeline / Workflow
-                        </label>
-                        <textarea class="form-control" rows="2" placeholder="Ex.: API Diário da República → ETL → Power BI"></textarea>
+                    <div class="col-md-12 mb-3">
+                        <label for="abstract" class="form-label">Resumo (abstract)</label>
+                        <textarea class="form-control" id="abstract" rows="3" placeholder="Descrição sumária do conteúdo, qualidade e propósito do recurso"></textarea>
                     </div>
                     
-                    <div class="col-12">
-                        <label class="form-label">
-                            <i class="bi bi-journal-text"></i>
-                            Logs / Auditoria
-                        </label>
-                        <textarea class="form-control" rows="2" placeholder="Ex.: Última execução bem-sucedida, erros registados, aprovações"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Descriptive Metadata -->
-            <div class="metadata-section">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <i class="bi bi-tags"></i>
-                    </div>
-                    <h3 class="section-title">Descriptive Metadata (Identificação)</h3>
-                </div>
-                
-                <div class="row">
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-award"></i>
-                            Título Oficial
-                        </label>
-                        <input type="text" class="form-control" placeholder="Ex.: Autoridade Nacional de Emergência e Proteção Civil">
-                    </div>
-                    
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-hash"></i>
-                            Palavras-chave
-                        </label>
-                        <input type="text" class="form-control" placeholder="Ex.: Proteção Civil, Segurança, Emergência">
-                    </div>
-                    
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-text-paragraph"></i>
-                            Resumo Curto
-                        </label>
-                        <textarea class="form-control" rows="3" placeholder="Breve descrição para facilitar a pesquisa e identificação."></textarea>
-                    </div>
-                    
-                    <div class="col-12">
-                        <label class="form-label">
-                            <i class="bi bi-fingerprint"></i>
-                            Identificador Único
-                        </label>
-                        <input type="text" class="form-control" placeholder="Ex.: ANEPC_XXV_2025">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Structural Metadata -->
-            <div class="metadata-section">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <i class="bi bi-diagram-2"></i>
-                    </div>
-                    <h3 class="section-title">Structural Metadata (Organização)</h3>
-                </div>
-                
-                <div class="row">
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-building-fill"></i>
-                            Ministério Pai
-                        </label>
-                        <input type="text" class="form-control" placeholder="Ex.: Ministério da Administração Interna">
-                    </div>
-                    
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-tree"></i>
-                            Hierarquia
-                        </label>
-                        <textarea class="form-control" rows="2" placeholder="Ex.: Ministério → Secretaria de Estado → Entidade Dependente"></textarea>
+                    <div class="col-md-12 mb-3">
+                        <label for="purpose" class="form-label">Propósito (purpose)</label>
+                        <textarea class="form-control" id="purpose" rows="2" placeholder="Resumo dos objetivos para os quais o recurso foi desenvolvido"></textarea>
                     </div>
                     
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-diagram-project"></i>
-                            Função no Organograma
-                        </label>
-                        <input type="text" class="form-control" placeholder="Ex.: Órgão central com delegações regionais">
+                        <label for="status" class="form-label">Estado (status)</label>
+                        <select class="form-select" id="status">
+                            <option value="">Selecione...</option>
+                            <option value="completed">Completado</option>
+                            <option value="historicalArchive">Arquivo Histórico</option>
+                            <option value="obsolete">Obsoleto</option>
+                            <option value="onGoing">Em Curso</option>
+                            <option value="planned">Planeado</option>
+                            <option value="required">Requerido</option>
+                            <option value="underDevelopment">Em Desenvolvimento</option>
+                        </select>
                     </div>
                     
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-layers"></i>
-                            Nível Administrativo
-                        </label>
-                        <select class="form-select">
-                            <option value="">Selecionar nível</option>
-                            <option value="direta">Administração Direta</option>
-                            <option value="indireta">Administração Indireta</option>
-                            <option value="autonoma">Administração Autónoma</option>
+                        <label for="topicCategory" class="form-label">Categoria Temática (topicCategory)</label>
+                        <select class="form-select" id="topicCategory">
+                            <option value="">Selecione...</option>
+                            <option value="farming">Agricultura</option>
+                            <option value="biota">Biota</option>
+                            <option value="boundaries">Limites</option>
+                            <option value="climatologyMeteorologyAtmosphere">Climatologia/Meteorologia/Atmosfera</option>
+                            <option value="economy">Economia</option>
+                            <option value="elevation">Elevação</option>
+                            <option value="environment">Ambiente</option>
+                            <option value="geoscientificInformation">Informação Geocientífica</option>
+                            <option value="health">Saúde</option>
+                            <option value="imageryBaseMapsEarthCover">Imagens/Mapas Base/Cobertura Terrestre</option>
+                            <option value="intelligenceMilitary">Inteligência/Militar</option>
+                            <option value="inlandWaters">Águas Interiores</option>
+                            <option value="location">Localização</option>
+                            <option value="oceans">Oceanos</option>
+                            <option value="planningCadastre">Planeamento/Cadastro</option>
+                            <option value="society">Sociedade</option>
+                            <option value="structure">Estrutura</option>
+                            <option value="transportation">Transporte</option>
+                            <option value="utilitiesCommunication">Serviços/Comunicação</option>
                         </select>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Administrative Metadata -->
-            <div class="metadata-section">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <i class="bi bi-shield-check"></i>
-                    </div>
-                    <h3 class="section-title">Administrative Metadata (Gestão e Preservação)</h3>
-                </div>
-                
+        <!-- Secção de Citação (ISO 19115) -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-quote-left me-2"></i>Citação (CI_Citation)</h2>
+            </div>
+            <div class="card-body">
                 <div class="row">
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-c-circle"></i>
-                            Direitos e Licenciamento
-                        </label>
-                        <input type="text" class="form-control" placeholder="Ex.: Informação pública sob regime de transparência administrativa">
-                    </div>
-                    
-                    <div class="col-12 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-file-earmark-text"></i>
-                            Documentos Legais Associados
-                        </label>
-                        <textarea class="form-control" rows="2" placeholder="Ex.: Decreto-Lei n.º 45/2019, Despacho de Nomeação de 2025"></textarea>
+                    <div class="col-md-6 mb-3">
+                        <label for="creationDate" class="form-label">Data de Criação (date)</label>
+                        <input type="date" class="form-control" id="creationDate">
                     </div>
                     
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-person-check"></i>
-                            Responsável pela Manutenção
-                        </label>
-                        <input type="text" class="form-control" placeholder="Ex.: Secretaria-Geral do MAI">
+                        <label for="publicationDate" class="form-label">Data de Publicação (date)</label>
+                        <input type="date" class="form-control" id="publicationDate">
+                    </div>
+                    
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Datas de Alteração (date)</label>
+                        <div id="revisionDatesContainer"></div>
+                        <button type="button" class="btn btn-warning mt-2" onclick="addRevisionDate()">
+                            <i class="fas fa-plus me-2"></i>Adicionar data de alteração
+                        </button>
                     </div>
                     
                     <div class="col-md-6 mb-3">
-                        <label class="form-label">
-                            <i class="bi bi-calendar-plus"></i>
-                            Data de Criação / Última Revisão
-                        </label>
-                        <input type="date" class="form-control">
+                        <label for="edition" class="form-label">Edição (edition)</label>
+                        <input type="text" class="form-control" id="edition" placeholder="Ex.: 1.0, 2ª edição">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="editionDate" class="form-label">Data da Edição (editionDate)</label>
+                        <input type="date" class="form-control" id="editionDate">
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Export Button -->
-            <div class="text-center mt-4 mb-5">
-                <button class="btn btn-export btn-lg" onclick="exportToPDF()">
-                    <i class="bi bi-file-earmark-pdf me-2"></i>
-                    Exportar para PDF
+        <!-- Secção de Palavras-chave (ISO 19115) -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-tags me-2"></i>Palavras-chave (MD_Keywords)</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="keyword" class="form-label">Palavras-chave (keyword)</label>
+                        <input type="text" class="form-control" id="keyword" placeholder="Ex.: Administração Direta, Governo">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="keywordType" class="form-label">Tipo de Palavra-chave (type)</label>
+                        <select class="form-select" id="keywordType">
+                            <option value="">Selecione...</option>
+                            <option value="discipline">Disciplina</option>
+                            <option value="place">Local</option>
+                            <option value="stratum">Estrato</option>
+                            <option value="temporal">Temporal</option>
+                            <option value="theme">Tema</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secção de Restrições (ISO 19115) -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-lock me-2"></i>Restrições de Acesso e Uso (MD_LegalConstraints)</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label for="accessConstraints" class="form-label">Restrições de Acesso (accessConstraints)</label>
+                        <select class="form-select" id="accessConstraints">
+                            <option value="">Selecione...</option>
+                            <option value="copyright">Copyright</option>
+                            <option value="patent">Patente</option>
+                            <option value="patentPending">Patente Pendente</option>
+                            <option value="trademark">Marca Registada</option>
+                            <option value="license">Licença</option>
+                            <option value="intellectualPropertyRights">Direitos de Propriedade Intelectual</option>
+                            <option value="restricted">Restrito</option>
+                            <option value="otherRestrictions">Outras Restrições</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-md-4 mb-3">
+                        <label for="useConstraints" class="form-label">Restrições de Uso (useConstraints)</label>
+                        <select class="form-select" id="useConstraints">
+                            <option value="">Selecione...</option>
+                            <option value="copyright">Copyright</option>
+                            <option value="patent">Patente</option>
+                            <option value="patentPending">Patente Pendente</option>
+                            <option value="trademark">Marca Registada</option>
+                            <option value="license">Licença</option>
+                            <option value="intellectualPropertyRights">Direitos de Propriedade Intelectual</option>
+                            <option value="restricted">Restrito</option>
+                            <option value="otherRestrictions">Outras Restrições</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-md-4 mb-3">
+                        <label for="otherConstraints" class="form-label">Outras Restrições (otherConstraints)</label>
+                        <input type="text" class="form-control" id="otherConstraints" placeholder="Descrição de outras restrições">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secção de Responsabilidade (ISO 19115) -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-user me-2"></i>Responsabilidade (CI_ResponsibleParty)</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="responsibleParty" class="form-label">Responsável (individualName)</label>
+                        <input type="text" class="form-control" id="responsibleParty" placeholder="Nome do responsável técnico">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="organisationName" class="form-label">Organização (organisationName)</label>
+                        <input type="text" class="form-control" id="organisationName" placeholder="Nome da organização">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="positionName" class="form-label">Cargo (positionName)</label>
+                        <input type="text" class="form-control" id="positionName" placeholder="Cargo ou função">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="role" class="form-label">Função (role)</label>
+                        <select class="form-select" id="role">
+                            <option value="">Selecione...</option>
+                            <option value="resourceProvider">Fornecedor de Recurso</option>
+                            <option value="custodian">Custódio</option>
+                            <option value="owner">Proprietário</option>
+                            <option value="user">Utilizador</option>
+                            <option value="distributor">Distribuidor</option>
+                            <option value="originator">Originador</option>
+                            <option value="pointOfContact">Ponto de Contacto</option>
+                            <option value="principalInvestigator">Investigador Principal</option>
+                            <option value="processor">Processador</option>
+                            <option value="publisher">Editor</option>
+                            <option value="author">Autor</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secção de Linhagem (ISO 19115) -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-sitemap me-2"></i>Linhagem (LI_Lineage)</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Fonte (source)</label>
+                        <div id="lineageContainer"></div>
+                        <button type="button" class="btn btn-warning mt-2" onclick="addLineageSource()">
+                            <i class="fas fa-plus me-2"></i>Adicionar Fonte
+                        </button>
+                    </div>
+                    
+                    <div class="col-md-12 mb-3">
+                        <label for="statement" class="form-label">Declaração de Linhagem (statement)</label>
+                        <textarea class="form-control" id="statement" rows="3" placeholder="Descrição geral da linhagem do recurso"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secção Colunas -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-columns me-2"></i>Metadados das Colunas</h2>
+            </div>
+            <div class="card-body">
+                <div id="columnsContainer"></div>
+                <button type="button" class="btn btn-primary" onclick="addColumn()">
+                    <i class="fas fa-plus me-2"></i>Adicionar Coluna
                 </button>
             </div>
+        </div>
 
+        <!-- Botões Exportação -->
+        <div class="btn-group-export">
+            <button class="btn btn-success" onclick="exportJSON()">
+                <i class="fas fa-download me-2"></i>Exportar para JSON
+            </button>
+            <button class="btn btn-warning" onclick="window.print()">
+                <i class="fas fa-file-pdf me-2"></i>Exportar para PDF
+            </button>
+        </div>
+
+        <!-- Rodapé Informativo -->
+        <div class="footer">
+            <p class="mb-0">
+                <i class="fas fa-info-circle me-2"></i>
+                Esta ficha de metadados segue as normas ISO 19115 e ISO/IEC 11179 para descrição de dados e recursos.
+                O objetivo é garantir consistência, rastreabilidade e integração com sistemas de governança de dados, facilitando auditorias e uso eficiente da informação.
+            </p>
         </div>
     </div>
-</div>
 
-<!-- Floating Action Button -->
-<button class="floating-action-btn" onclick="scrollToTop()" id="scrollTopBtn" style="display: none;">
-    <i class="bi bi-arrow-up"></i>
-</button>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let loadedData = null;
 
-<script>
-    // Progress bar functionality
-    function updateProgressBar() {
-        const scrollTop = window.pageYOffset;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        document.getElementById('progressBar').style.width = scrollPercent + '%';
-    }
+        // Drag & Drop functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropZone = document.getElementById('dropZone');
+            const fileInput = document.getElementById('fileInput');
 
-    // Scroll to top button
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+            // Prevent default drag behaviors
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropZone.addEventListener(eventName, preventDefaults, false);
+                document.body.addEventListener(eventName, preventDefaults, false);
+            });
+
+            // Highlight drop zone when item is dragged over it
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropZone.addEventListener(eventName, highlight, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropZone.addEventListener(eventName, unhighlight, false);
+            });
+
+            // Handle dropped files
+            dropZone.addEventListener('drop', handleDrop, false);
+            fileInput.addEventListener('change', handleFileSelect);
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            function highlight(e) {
+                dropZone.classList.add('dragover');
+            }
+
+            function unhighlight(e) {
+                dropZone.classList.remove('dragover');
+            }
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                handleFiles(files);
+            }
+
+            function handleFileSelect(e) {
+                const files = e.target.files;
+                handleFiles(files);
+            }
+
+            function handleFiles(files) {
+                if (files.length > 0) {
+                    const file = files[0];
+                    if (file.type === 'application/json' || file.name.endsWith('.json')) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            try {
+                                loadedData = JSON.parse(e.target.result);
+                                document.getElementById('fileName').textContent = file.name;
+                                document.getElementById('fileInfo').style.display = 'block';
+                                dropZone.style.display = 'none';
+                            } catch (error) {
+                                alert('Erro ao ler o ficheiro JSON: ' + error.message);
+                            }
+                        };
+                        reader.readAsText(file);
+                    } else {
+                        alert('Por favor, selecione um ficheiro JSON válido.');
+                    }
+                }
+            }
         });
-    }
 
-    // Show/hide scroll to top button
-    function toggleScrollButton() {
-        const scrollBtn = document.getElementById('scrollTopBtn');
-        if (window.pageYOffset > 300) {
-            scrollBtn.style.display = 'block';
-        } else {
-            scrollBtn.style.display = 'none';
+        function loadFormData() {
+            if (!loadedData) {
+                alert('Nenhum ficheiro carregado.');
+                return;
+            }
+
+            try {
+                // Preencher dados da tabela
+                if (loadedData.table) {
+                    const table = loadedData.table;
+                    
+                    // MD_Identification
+                    if (table.title) document.getElementById('title').value = table.title;
+                    if (table.fileIdentifier) document.getElementById('fileIdentifier').value = table.fileIdentifier;
+                    if (table.language) document.getElementById('language').value = table.language;
+                    if (table.abstract) document.getElementById('abstract').value = table.abstract;
+                    if (table.purpose) document.getElementById('purpose').value = table.purpose;
+                    if (table.status) document.getElementById('status').value = table.status;
+                    if (table.topicCategory) document.getElementById('topicCategory').value = table.topicCategory;
+                    
+                    // CI_Citation
+                    if (table.creationDate) document.getElementById('creationDate').value = table.creationDate;
+                    if (table.publicationDate) document.getElementById('publicationDate').value = table.publicationDate;
+                    if (table.edition) document.getElementById('edition').value = table.edition;
+                    if (table.editionDate) document.getElementById('editionDate').value = table.editionDate;
+                    
+                    // MD_Keywords
+                    if (table.keyword && table.keyword.length > 0) document.getElementById('keyword').value = table.keyword.join(', ');
+                    if (table.keywordType) document.getElementById('keywordType').value = table.keywordType;
+                    
+                    // MD_LegalConstraints
+                    if (table.accessConstraints) document.getElementById('accessConstraints').value = table.accessConstraints;
+                    if (table.useConstraints) document.getElementById('useConstraints').value = table.useConstraints;
+                    if (table.otherConstraints) document.getElementById('otherConstraints').value = table.otherConstraints;
+                    
+                    // CI_ResponsibleParty
+                    if (table.individualName) document.getElementById('responsibleParty').value = table.individualName;
+                    if (table.organisationName) document.getElementById('organisationName').value = table.organisationName;
+                    if (table.positionName) document.getElementById('positionName').value = table.positionName;
+                    if (table.role) document.getElementById('role').value = table.role;
+                    
+                    // LI_Lineage
+                    if (table.statement) document.getElementById('statement').value = table.statement;
+                    
+                    // Preencher fontes/origem
+                    if (table.lineage && table.lineage.length > 0) {
+                        const container = document.getElementById('lineageContainer');
+                        container.innerHTML = '';
+                        table.lineage.forEach(source => {
+                            if (source) {
+                                const inputGroup = document.createElement('div');
+                                inputGroup.className = 'lineage-source-input';
+                                inputGroup.innerHTML = `
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control lineageSource" value="${source}" placeholder="Ex.: Portal do Governo, Diário da República">
+                                        <button class="btn btn-outline-danger" type="button" onclick="removeLineageSource(this)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                `;
+                                container.appendChild(inputGroup);
+                            }
+                        });
+                    }
+                    
+                    // Preencher datas de alteração
+                    if (table.revisionDate && table.revisionDate.length > 0) {
+                        const container = document.getElementById('revisionDatesContainer');
+                        container.innerHTML = '';
+                        table.revisionDate.forEach(date => {
+                            if (date) {
+                                const inputGroup = document.createElement('div');
+                                inputGroup.className = 'revision-date-input';
+                                inputGroup.innerHTML = `
+                                    <div class="input-group">
+                                        <input type="date" class="form-control revisionDate" value="${date}">
+                                        <button class="btn btn-outline-danger" type="button" onclick="removeRevisionDate(this)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                `;
+                                container.appendChild(inputGroup);
+                            }
+                        });
+                    }
+                }
+
+                // Preencher colunas
+                if (loadedData.columns && loadedData.columns.length > 0) {
+                    const container = document.getElementById('columnsContainer');
+                    container.innerHTML = '';
+                    loadedData.columns.forEach(column => {
+                        addColumn();
+                        const lastColumn = container.lastElementChild;
+                        
+                        if (column.dataElementName) lastColumn.querySelector('.dataElementName').value = column.dataElementName;
+                        if (column.definition) lastColumn.querySelector('.definition').value = column.definition;
+                        if (column.dataType) {
+                            lastColumn.querySelector('.dataType').value = column.dataType;
+                            // Ativar campos condicionais após definir o valor
+                            toggleConditionalFields(lastColumn.querySelector('.dataType'));
+                        }
+                        if (column.format) lastColumn.querySelector('.format').value = column.format;
+                        if (column.unitOfMeasure) lastColumn.querySelector('.unitOfMeasure').value = column.unitOfMeasure;
+                        if (column.permissibleValues) lastColumn.querySelector('.permissibleValues').value = column.permissibleValues;
+                        if (column.source) lastColumn.querySelector('.source').value = column.source;
+                        if (column.responsibleParty) lastColumn.querySelector('.responsiblePartyCol').value = column.responsibleParty;
+                        if (column.notes) lastColumn.querySelector('.notes').value = column.notes;
+                    });
+                }
+
+                // Mostrar mensagem de sucesso
+                const alertDiv = document.createElement('div');
+                alertDiv.className = 'alert alert-success alert-dismissible fade show';
+                alertDiv.innerHTML = `
+                    <i class="fas fa-check-circle me-2"></i>
+                    <strong>Sucesso!</strong> Formulário preenchido com dados do ficheiro JSON.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                document.querySelector('.container').insertBefore(alertDiv, document.querySelector('.card'));
+
+                // Esconder área de upload
+                document.getElementById('fileInfo').style.display = 'none';
+                document.getElementById('dropZone').style.display = 'block';
+
+            } catch (error) {
+                alert('Erro ao preencher o formulário: ' + error.message);
+            }
         }
-    }
 
-    // Export to PDF function
-    function exportToPDF() {
-        // Add loading state
-        const btn = event.target;
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Gerando PDF...';
-        btn.disabled = true;
-        
-        // Simulate PDF generation
-        setTimeout(() => {
-            window.print();
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-        }, 1000);
-    }
+        function addRevisionDate() {
+            const container = document.getElementById('revisionDatesContainer');
+            const inputGroup = document.createElement('div');
+            inputGroup.className = 'revision-date-input';
+            
+            inputGroup.innerHTML = `
+                <div class="input-group">
+                    <input type="date" class="form-control revisionDate">
+                    <button class="btn btn-outline-danger" type="button" onclick="removeRevisionDate(this)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `;
+            container.appendChild(inputGroup);
+        }
 
-    // Event listeners
-    window.addEventListener('scroll', () => {
-        updateProgressBar();
-        toggleScrollButton();
-    });
+        function removeRevisionDate(button) {
+            button.closest('.revision-date-input').remove();
+        }
 
-    // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
-        updateProgressBar();
-        toggleScrollButton();
-    });
-</script>
+        function addLineageSource() {
+            const container = document.getElementById('lineageContainer');
+            const inputGroup = document.createElement('div');
+            inputGroup.className = 'lineage-source-input';
+            
+            inputGroup.innerHTML = `
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control lineageSource" placeholder="Ex.: Portal do Governo, Diário da República">
+                    <button class="btn btn-outline-danger" type="button" onclick="removeLineageSource(this)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `;
+            container.appendChild(inputGroup);
+        }
 
+        function removeLineageSource(button) {
+            button.closest('.lineage-source-input').remove();
+        }
+
+        function generateUUID() {
+            // Gerar timestamp atual em base36 para garantir unicidade temporal
+            const timestamp = Date.now().toString(36);
+            
+            // Gerar string aleatória de 8 caracteres
+            const randomPart = Math.random().toString(36).substring(2, 10);
+            
+            // Combinar: SGGOV + timestamp + random
+            const customId = `SGGOV-${timestamp}-${randomPart}`.toUpperCase();
+            
+            document.getElementById('fileIdentifier').value = customId;
+            validateUUID(customId);
+        }
+
+        function validateUUID(uuid) {
+            // Validar formato personalizado: SGGOV-XXXXX-XXXXXXXX
+            const customRegex = /^SGGOV-[a-z0-9]+-[a-z0-9]{8}$/i;
+            const input = document.getElementById('fileIdentifier');
+            
+            if (uuid && !customRegex.test(uuid)) {
+                input.classList.add('is-invalid');
+                showAlert('Formato inválido. Deve começar com "SGGOV-" seguido de identificador único.', 'warning');
+            } else {
+                input.classList.remove('is-invalid');
+                input.classList.add('is-valid');
+            }
+        }
+
+        function showUUIDInfo() {
+            const info = `
+                <div class="alert alert-info">
+                    <h5><i class="fas fa-fingerprint me-2"></i>Identificador Único SGGOV</h5>
+                    <p><strong>Para que serve:</strong></p>
+                    <ul>
+                        <li>Identificação única do recurso de dados</li>
+                        <li>Rastreabilidade em sistemas de catálogo</li>
+                        <li>Ligação entre metadados e dados</li>
+                        <li>Evita duplicações em bases de dados</li>
+                        <li>Referência cruzada entre sistemas</li>
+                        <li>Identificação da origem (Secretaria-Geral do Governo)</li>
+                    </ul>
+                    <p><strong>Formato:</strong></p>
+                    <ul>
+                        <li><strong>SGGOV</strong> - Prefixo da organização</li>
+                        <li><strong>Timestamp</strong> - Data/hora de criação (base36)</li>
+                        <li><strong>Random</strong> - String aleatória de 8 caracteres</li>
+                    </ul>
+                    <p><strong>Garantia de unicidade:</strong></p>
+                    <ul>
+                        <li>Combinação de timestamp + string aleatória</li>
+                        <li>Praticamente impossível gerar o mesmo ID duas vezes</li>
+                        <li>Formato legível e rastreável</li>
+                        <li>Identificação clara da origem</li>
+                    </ul>
+                    <p><strong>Exemplo:</strong> SGGOV-LM5K2N-A7B9C3D4</p>
+                </div>
+            `;
+            
+            // Criar modal ou alerta
+            const modal = document.createElement('div');
+            modal.className = 'modal fade';
+            modal.innerHTML = `
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Informação sobre UUID</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            ${info}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            const bsModal = new bootstrap.Modal(modal);
+            bsModal.show();
+            
+            modal.addEventListener('hidden.bs.modal', function() {
+                document.body.removeChild(modal);
+            });
+        }
+
+        function showAlert(message, type = 'info') {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            alertDiv.style.top = '20px';
+            alertDiv.style.right = '20px';
+            alertDiv.style.zIndex = '9999';
+            alertDiv.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(alertDiv);
+            
+            setTimeout(() => {
+                if (alertDiv.parentNode) {
+                    alertDiv.remove();
+                }
+            }, 5000);
+        }
+
+        function toggleConditionalFields(selectElement) {
+            const columnSection = selectElement.closest('.column-section');
+            const formatField = columnSection.querySelector('.format-field');
+            const unitField = columnSection.querySelector('.unit-field');
+            const selectedValue = selectElement.value;
+
+            console.log('toggleConditionalFields chamada:', selectedValue);
+
+            // Esconder ambos os campos por padrão
+            if (formatField) formatField.style.display = 'none';
+            if (unitField) unitField.style.display = 'none';
+
+            // Mostrar campos baseado na seleção
+            if (selectedValue === 'date' && formatField) {
+                formatField.style.display = 'block';
+                console.log('Campo formato mostrado');
+            } else if (selectedValue === 'integer' && unitField) {
+                unitField.style.display = 'block';
+                console.log('Campo unidade mostrado');
+            }
+        }
+
+        function addColumn() {
+            const container = document.getElementById('columnsContainer');
+            const columnSection = document.createElement('div');
+            columnSection.className = 'column-section';
+
+            columnSection.innerHTML = `
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Nome da Coluna (dataElementName)</label>
+                        <input type="text" class="form-control dataElementName" placeholder="Ex.: Ministério Responsável">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Tipo de Dado (dataType)</label>
+                        <select class="form-select dataType" onchange="toggleConditionalFields(this)">
+                            <option value="string">String</option>
+                            <option value="integer">Integer</option>
+                            <option value="date">Date</option>
+                            <option value="boolean">Boolean</option>
+                        </select>
+                    </div>
+                    
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Definição (definition)</label>
+                        <textarea class="form-control definition" rows="2" placeholder="Definição funcional da coluna."></textarea>
+                    </div>
+                    
+                    <div class="col-md-4 mb-3 format-field" style="display: none;">
+                        <label class="form-label">Formato (format)</label>
+                        <input type="text" class="form-control format" placeholder="Ex.: YYYY-MM-DD">
+                    </div>
+                    
+                    <div class="col-md-4 mb-3 unit-field" style="display: none;">
+                        <label class="form-label">Unidade de Medida (unitOfMeasure)</label>
+                        <input type="text" class="form-control unitOfMeasure" placeholder="Ex.: km, %">
+                    </div>
+                    
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Fonte (source)</label>
+                        <input type="text" class="form-control source" placeholder="Ex.: Diário da República">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Valores Permitidos (permissibleValues)</label>
+                        <input type="text" class="form-control permissibleValues" placeholder="Ex.: Lista de códigos ou valores válidos">
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Responsável (responsibleParty)</label>
+                        <input type="text" class="form-control responsiblePartyCol" placeholder="Ex.: SG Governo">
+                    </div>
+                    
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Notas (notes)</label>
+                        <textarea class="form-control notes" rows="2" placeholder="Informações adicionais sobre a coluna."></textarea>
+                    </div>
+                    
+                    <div class="col-12 text-center">
+                        <button type="button" class="btn btn-danger" onclick="this.closest('.column-section').remove()">
+                            <i class="fas fa-trash me-2"></i>Remover Coluna
+                        </button>
+                    </div>
+                </div>
+            `;
+            container.appendChild(columnSection);
+        }
+
+        function exportJSON() {
+            const tableMetadata = {
+                // MD_Identification
+                title: document.getElementById('title').value,
+                fileIdentifier: document.getElementById('fileIdentifier').value,
+                language: document.getElementById('language').value,
+                abstract: document.getElementById('abstract').value,
+                purpose: document.getElementById('purpose').value,
+                status: document.getElementById('status').value,
+                topicCategory: document.getElementById('topicCategory').value,
+                
+                // CI_Citation
+                creationDate: document.getElementById('creationDate').value,
+                publicationDate: document.getElementById('publicationDate').value,
+                revisionDate: Array.from(document.getElementsByClassName('revisionDate')).map(el => el.value),
+                edition: document.getElementById('edition').value,
+                editionDate: document.getElementById('editionDate').value,
+                
+                // MD_Keywords
+                keyword: document.getElementById('keyword').value.split(',').map(k => k.trim()),
+                keywordType: document.getElementById('keywordType').value,
+                
+                // MD_LegalConstraints
+                accessConstraints: document.getElementById('accessConstraints').value,
+                useConstraints: document.getElementById('useConstraints').value,
+                otherConstraints: document.getElementById('otherConstraints').value,
+                
+                // CI_ResponsibleParty
+                individualName: document.getElementById('responsibleParty').value,
+                organisationName: document.getElementById('organisationName').value,
+                positionName: document.getElementById('positionName').value,
+                role: document.getElementById('role').value,
+                
+                // LI_Lineage
+                lineage: Array.from(document.getElementsByClassName('lineageSource')).map(el => el.value).filter(val => val.trim() !== ''),
+                statement: document.getElementById('statement').value
+            };
+
+            const columns = Array.from(document.getElementById('columnsContainer').children).map(section => ({
+                dataElementName: section.querySelector('.dataElementName').value,
+                definition: section.querySelector('.definition').value,
+                dataType: section.querySelector('.dataType').value,
+                format: section.querySelector('.format').value,
+                unitOfMeasure: section.querySelector('.unitOfMeasure').value,
+                permissibleValues: section.querySelector('.permissibleValues').value,
+                source: section.querySelector('.source').value,
+                responsibleParty: section.querySelector('.responsiblePartyCol').value,
+                notes: section.querySelector('.notes').value
+            }));
+
+            const fullMetadata = {
+                table: tableMetadata,
+                columns: columns
+            };
+
+            const blob = new Blob([JSON.stringify(fullMetadata, null, 2)], { type: "application/json" });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = "metadata.json";
+            link.click();
+        }
+    </script>
 </body>
 </html>
